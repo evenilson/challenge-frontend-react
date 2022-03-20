@@ -1,10 +1,9 @@
-import './App.css';
+import RoutesApp from './routes';
+import './styles/global.scss';
 
 function App() {
   return (
-    <div className="App">
-      oi
-    </div>
+    <RoutesApp />
   );
 }
 
