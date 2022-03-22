@@ -5,12 +5,15 @@ import ironImg from '../../assets/images/iron-man.svg';
 import usersIcon from '../../assets/icons/users.svg';
 
 import './styles.scss';
+import useBreakpointDevice from '../../hooks/useBreakpointDevice';
 
 function Header() {
+
+  const { device } = useBreakpointDevice();
  
   return (
     <header>
-      <nav className="container header-content">
+      <nav className={`container header-content ${device}`}>
         <Link to="/" className="header-content__logo">
           <img src={ironImg} alt="Iron-Man image" />
           <h1>Marvel Strike Team</h1>
