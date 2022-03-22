@@ -5,3 +5,27 @@ header {
   background: var(--black-background);
   color: var(--white)
 }
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  height: 100%;
+
+  &__logo, &__buttom {
+    display: flex;
+    align-items: center;
+
+    gap: 1rem;
+  }
+
+  &__buttom {
+    background: var(--red);
+
+    border-radius: 5px 20px;
+
+    padding: 1rem;
+  }
+}
