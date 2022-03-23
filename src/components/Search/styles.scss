@@ -1,0 +1,30 @@
+.search-input {
+  position: relative;
+  
+  > input {
+    width: 100%;
+    padding: 1rem;
+  
+    border: none;
+    border-radius: 5px 20px;
+
+    padding-right: 5rem;
+  
+    position: relative;
+  }
+
+  &__icon {
+    position: absolute;
+    background: var(--red);
+    width: 4rem;
+    height: 100%;
+    right: 0;
+    bottom: 0;
+    border-radius: 5px 20px 5px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
