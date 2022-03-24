@@ -2,11 +2,7 @@ import api from "./api";
 
 
 function getCharacters() {
-  api.get("characters", {
-    params: {
-      limit: 8,
-    }
-  })
+  api.get("characters")
   .then((data) => {
     return data.data
   })

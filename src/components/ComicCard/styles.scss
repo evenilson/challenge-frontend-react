@@ -1,0 +1,61 @@
+.comic-card {
+  width: 100%;
+
+  display: flex;
+
+  background: var(--white);
+  box-shadow: var(--box-shadow);
+
+  border-radius: 10px 70px;
+
+  margin-top: 2rem;
+
+  &__image {
+    display: flex;
+    justify-content: center;
+
+    width: 15rem;
+
+    overflow: hidden;
+    border-radius: 0px 0px 0px 70px;
+
+    img {
+      object-fit: cover; 
+    }
+  }
+
+  &__body {
+    flex: 1;
+    padding: .7rem 2rem 1rem 2rem;
+
+    h1 {
+      margin-bottom: 1rem;
+    }
+
+
+    .body-datails {
+      margin-bottom: 1rem;
+      span {
+        &:first-child, &:nth-child(2){
+          margin: 0;
+          margin-right: 2rem;
+          position: relative;
+          &::before {
+            position: absolute;
+            content: '';
+            width: 5px;
+            height: 3px;
+
+            border: 3px solid var(--black-text);
+            right: -1rem;
+            top: 50%;
+            transform: translate(50%, -50%);
+
+            border-radius: 50%;
+        
+          }
+        }
+      }
+    }
+  }
+}
