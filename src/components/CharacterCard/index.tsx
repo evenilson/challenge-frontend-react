@@ -1,6 +1,7 @@
 
 
 
+import limitCaratersDescription from '../../utils/limitCaratersDescription';
 import groupIcon from './../../assets/icons/group.svg';
 
 import './styles.scss';
@@ -21,7 +22,7 @@ function CharacterCard({ id, image, name, description }:CharacterCard) {
       </div>
       <div className="character-card__body">
         <h2>{name}</h2>
-        <p>{description}</p>
+        <p>{limitCaratersDescription(description, 100)}</p>
         <button>
           <img src={groupIcon} alt="Group icon" />
         </button>

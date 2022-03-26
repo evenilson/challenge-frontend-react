@@ -22,7 +22,7 @@ function CharacterApresentationCard({name, description, image}: CharacterApresen
       </div>
       <div className="character-apresentation-card__body">
         <h1>{name}</h1>
-        <p>{limitCaratersDescription(description)}</p>
+        <p>{limitCaratersDescription(description, 200)}</p>
       </div>
     </div>
   );

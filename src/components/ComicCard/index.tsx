@@ -20,7 +20,7 @@ function ComicCard({image, name, releaseDate, numberPages, description, price}: 
       <div className="comic-card__body">
         <h1>{name}</h1>
         <div className="body-datails"> <span> {releaseDate} </span> <span> {numberPages} pages</span> <span> {price} </span></div>
-        <p>{limitCaratersDescription(description)}</p>
+        <p>{limitCaratersDescription(description, 200)}</p>
       </div>
     </div>
   );

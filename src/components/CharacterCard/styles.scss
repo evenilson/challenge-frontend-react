@@ -1,27 +1,32 @@
 .character-card {
   width: 16rem;
+  height: 23rem;
 
   background: var(--white);
   box-shadow: var(--box-shadow);
 
   border-radius: 10px 30px;
-  margin: 4rem;
   
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 
   &__image {
-    flex: 1;
-
+    height: 12rem;
     display: flex;
-    align-items: center;
     justify-content: center;
     overflow: hidden;
 
-    border-radius: 10px 30px 0 0;
+    border-radius: 10px 30px 0 0; 
+
+    img {
+      width: 100%;
+      object-fit: cover; 
+    }
   }
   &__body {
+    flex: 1;
+    
     padding: 1rem;
     
     p {

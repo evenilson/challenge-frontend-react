@@ -1,9 +1,9 @@
-function limitCaratersDescription(description: string) {
-  const exceededCharacterLimit = description.length >= 200 ? true : false;
+function limitCaratersDescription(description: string, limit: number) {
+  const exceededCharacterLimit = description.length >= limit ? true : false;
   
   if(!exceededCharacterLimit) return description
 
-  return description.substr(0, 199).concat('...')
+  return description.substr(0, limit - 1).concat('...')
 
 }
 
