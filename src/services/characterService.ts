@@ -1,13 +1,18 @@
 import api from "./api";
 
 
-async function getCharacters(limit: number, offset: number){
+async function getCharacters(limit: number, offset: number, text: string){
+
+  const params: any = {
+    limit,
+    offset,
+  }
+
+  if (text) params['nameStartsWith'] = text
+
   try {
     const { data } = await api.get('characters', {
-      params: {
-        limit,
-        offset,
-      },  
+      params: params  
     });
 
     return data;

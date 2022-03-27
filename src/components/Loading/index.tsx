@@ -1,13 +1,15 @@
-import { CSSProperties } from 'react';
 import './styles.scss';
 
 type LoadingPros = {
-  style?: CSSProperties
+  title?: string
 }
 
-function Loading({style={}}: LoadingPros) {
+function Loading({title=''}: LoadingPros) {
   return (
-    <div className="loading" style={style}></div>
+    <div className="loading">
+      <div className="loading__spin"></div>
+      {title && <p className="loading__title">{title}</p>}
+    </div>
   );
 }
 

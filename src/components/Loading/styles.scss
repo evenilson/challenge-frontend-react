@@ -1,19 +1,38 @@
 .loading {
-  width: 3rem;
-  height: 3rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  margin: 1rem 0 5rem 0;
 
-  &::after {
-    content: " ";
-    display: block;
-    width: 2.5rem;
-    height: 2.5rem;
-    margin: 8px;
-    border-radius: 50%;
-    border: 6px solid rgb(102, 93, 93);
-    border-color: rgb(102, 93, 93) transparent rgb(102, 93, 93) transparent;
-    animation: rotate 1.2s linear infinite;
+  &__spin {
+    width: 3rem;
+    height: 3rem;
+
+    &::after {
+      content: " ";
+      display: block;
+      width: 2.5rem;
+      height: 2.5rem;
+      margin: 8px;
+      border-radius: 50%;
+      border: 6px solid var(--gray);
+      border-color: var(--gray) transparent var(--gray) transparent;
+      animation: rotate 1.2s linear infinite;
+    }
+  }
+
+  &__title {
+    text-align: center;
+
+    font-size: .9rem;
+  
+    margin-top: 1rem;
   }
 }
+
 
 @keyframes rotate{
   0% {
