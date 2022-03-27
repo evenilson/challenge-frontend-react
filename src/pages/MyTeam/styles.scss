@@ -1,0 +1,17 @@
+.my-team {
+  transform: translateY(-14rem);
+   
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 3.5rem;
+
+  .info {
+    text-align: center;
+
+    margin: 4rem 0;
+
+    color: var(--white);
+  }
+}

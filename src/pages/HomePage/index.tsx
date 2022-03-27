@@ -33,7 +33,7 @@ function HomePage() {
   const debouncedSearchText = useDebounce(text, 500)
 
 
-  const styleCustomeBanner = device === 'desktop' ? { width: '50%' } : device === 'tablet' ? { width: '75%' } : {};
+  const customStyleTitle = device === 'desktop' ? { width: '50%' } : device === 'tablet' ? { width: '75%' } : {};
 
   async function handleGetCharacters() {
 
@@ -95,7 +95,7 @@ function HomePage() {
     <>
       <Banner
         title={<>Explore the most powerful <br /> characters in Marvel</>}
-        styles={styleCustomeBanner}
+        styles={customStyleTitle}
         children={
           <Search
             text={text}
@@ -116,10 +116,10 @@ function HomePage() {
                 characters.map((character) => {
                   return (
                     <CharacterCard
-                      key={character.id}
+                      key={character.id} 
                       id={character.id}
                       name={character.name}
-                      image={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+                      thumbnail={ character.thumbnail }
                       description={character.description || 'Without description'}
                     />
                   )
@@ -134,7 +134,7 @@ function HomePage() {
       </section>
 
       {(loading && !isFirstSearch) && <Loading />}
-      { (!haveMoreCharacters && characters.length) && <p style={{margin: '2rem auto', textAlign: 'center'}}>We have no further results to show!</p>} 
+      { (!haveMoreCharacters && characters.length) && <p className="info">We have no further results to show!</p>} 
 
       <div ref={scrollObserve}></div>
       {(characters.length > 0 && !loadingSearch )&& <Footer />}

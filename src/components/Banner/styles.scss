@@ -21,4 +21,21 @@
 
     transform: translateY(-3rem);
   }
+
+  position: relative;
+
+  .back {
+    color: #FFCDD2;
+
+    position: absolute;
+
+    top: 1rem;
+    right: 0;
+
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+
+
+  }
 }

@@ -18,7 +18,7 @@ function Header() {
           <img src={ironImg} alt="Iron-Man image" />
           <h1>Marvel Strike Team</h1>
         </Link>
-        <Link to="/" className="header-content__buttom">
+        <Link to="my-team" className="header-content__buttom">
           <p>My team</p>
           <img src={usersIcon} alt="Users icon" />
         </Link>

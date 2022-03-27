@@ -2,7 +2,6 @@
   width: 16rem;
   height: 23rem;
 
-  background: var(--white);
   box-shadow: var(--box-shadow);
 
   border-radius: 10px 30px;
@@ -10,6 +9,8 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+
+  background: var(--white);
 
   &__image {
     height: 12rem;
@@ -54,6 +55,11 @@
       justify-content: center;
 
       border: none;
+
+
+      &:hover {
+        filter: brightness(.9);
+      }
 
     }
   }

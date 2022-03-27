@@ -18,8 +18,9 @@
       height: 2.5rem;
       margin: 8px;
       border-radius: 50%;
-      border: 6px solid var(--gray);
-      border-color: var(--gray) transparent var(--gray) transparent;
+      border: 6px solid #FFCDD2;
+
+      border-color: #FFCDD2 transparent #FFCDD2 transparent;
       animation: rotate 1.2s linear infinite;
     }
   }
