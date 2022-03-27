@@ -12,6 +12,7 @@ import { getCharacterById, getComics } from "../../services/characterService";
 import Loading from "../../components/Loading";
 import TitleList from "../../components/TitleList/intex";
 import Footer from "../../components/Footer";
+import { toastMessage } from "../../utils/toastMessage";
 
 
 function CharacterProfile(){
@@ -32,11 +33,18 @@ function CharacterProfile(){
     .then((res) => {
       setCharacterInfo(res.data.results[0])
     })
+    .catch((err) => {
+      toastMessage({type: 'error', message: "There was an error fetching the information!"});
+    })
     
     getComics(id || '')
     .then((res) => {
       setComics(res.data.results)
     })
+    .catch((err) => {
+      toastMessage({type: 'error', message: "There was an error fetching the information!"});
+    })
+
     .finally(() => {
       setLoading(false)
     })

@@ -10,6 +10,7 @@ import useBreakpointDevice from '../../hooks/useBreakpointDevice';
 import useDebounce from '../../hooks/useDebounce';
 import { getCharacters } from '../../services/characterService';
 import { ICharacter } from '../../types/character';
+import { toastMessage } from '../../utils/toastMessage';
 
 import './styles.scss';
 
@@ -49,6 +50,10 @@ function HomePage() {
         }
         setHaveMoreCharacters(res.data.count > 0 ? true : false)
       })
+      .catch((err) => {
+        toastMessage({type: 'error', message: "There was an error fetching the information!"});
+      })
+      
       .finally(() => {
         setLoading(false)
         setLoadingSearch(false)
@@ -66,7 +71,7 @@ function HomePage() {
     return () => {
       intersectionObserver.disconnect();
     }
-  }, [])
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     setLoading(true);
@@ -77,7 +82,7 @@ function HomePage() {
     if (isMoreCharacters && haveMoreCharacters) {
       handleGetCharacters().then(() => { setOffset(offset + 8) });
     }
-  }, [isMoreCharacters])
+  }, [isMoreCharacters]) // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if(debouncedSearchText) {
@@ -85,7 +90,7 @@ function HomePage() {
     }
     handleGetCharacters().then(() => { setOffset(offset + 8) });
 
-  }, [debouncedSearchText])
+  }, [debouncedSearchText]) // eslint-disable-line react-hooks/exhaustive-deps
 
   function onChangeText(text: string) {
     setText(text)

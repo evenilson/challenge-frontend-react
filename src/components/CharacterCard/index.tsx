@@ -8,7 +8,7 @@ import groupIcon from './../../assets/icons/group.svg';
 
 import './styles.scss';
 
-type CharacterCard = {
+type CharacterCardProps = {
   id: string,
   name: string,
   description: string
@@ -19,7 +19,7 @@ type CharacterCard = {
 }
 
 
-function CharacterCard({ id, name, description , thumbnail}:CharacterCard) {
+function CharacterCard({ id, name, description, thumbnail}:CharacterCardProps) {
 
   const {
     isFavorite,
@@ -46,7 +46,7 @@ function CharacterCard({ id, name, description , thumbnail}:CharacterCard) {
   return (
     <div className="character-card">
       <div className="character-card__image">
-        <img src={`${thumbnail.path}.${thumbnail.extension}`} alt={`Image the ${name}`} />
+        <img src={`${thumbnail.path}.${thumbnail.extension}`} alt={`${name}`} />
       </div>
       <div className="character-card__body">
         <Link to={`/character-profile/${id}`}><h2>{name}</h2></Link>
