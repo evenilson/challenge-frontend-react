@@ -8,7 +8,7 @@ import Search from '../../components/Search';
 import TitleList from '../../components/TitleList/intex';
 import useBreakpointDevice from '../../hooks/useBreakpointDevice';
 import useDebounce from '../../hooks/useDebounce';
-import getCharacters from '../../services/characterService';
+import { getCharacters } from '../../services/characterService';
 import { ICharacter } from '../../types/character';
 
 import './styles.scss';

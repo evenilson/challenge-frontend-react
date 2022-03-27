@@ -34,6 +34,12 @@
       margin-top: 1rem;
     }
 
+    a:hover {
+      color: #FFCDD2;
+
+      transition: .2s ease;
+    }
+
     position: relative;
 
     button {
@@ -62,5 +68,11 @@
       }
 
     }
+  }
+
+  transition: .2s cubic-bezier(1, 0, 0, 1);
+
+  &:hover {
+    transform: translateY(-1rem);
   }
 }

@@ -5,13 +5,18 @@ import './styles.scss';
 type ComicCardProps = {
   image: string,
   name: string,
-  releaseDate: string,
+  releaseDate: any,
   numberPages: number,
   description: string,
-  price: string,
+  price: any,
 }
 
+
+
 function ComicCard({image, name, releaseDate, numberPages, description, price}: ComicCardProps) {
+
+  console.log('price', price, )
+
   return(
     <div className="comic-card">
       <div className="comic-card__image">
@@ -19,8 +24,12 @@ function ComicCard({image, name, releaseDate, numberPages, description, price}: 
       </div>
       <div className="comic-card__body">
         <h1>{name}</h1>
-        <div className="body-datails"> <span> {releaseDate} </span> <span> {numberPages} pages</span> <span> {price} </span></div>
-        <p>{limitCaratersDescription(description, 200)}</p>
+        <div className="body-datails">
+           <span>{new Date(releaseDate[1].date).toLocaleDateString('en-US')} </span> 
+           <span> {numberPages} pages</span>
+          <span> {price[0].price.toLocaleString('en-US', {style: 'currency', currency: 'USD'})} </span>
+          </div>
+        <p>{limitCaratersDescription(description, 300)}</p>
       </div>
     </div>
   );
