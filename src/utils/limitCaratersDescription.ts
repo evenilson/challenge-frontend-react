@@ -1,5 +1,5 @@
 function limitCaratersDescription(description: string, limit: number) {
-  const exceededCharacterLimit = description.length >= limit ? true : false;
+  const exceededCharacterLimit = description?.length >= limit ? true : false;
   
   if(!exceededCharacterLimit) return description
 

@@ -1,7 +1,7 @@
 
 
 
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import ReactTooltip from 'react-tooltip';
 import useBreakpointDevice from '../../hooks/useBreakpointDevice';
 import useMyTeam from '../../hooks/useMyTeam';

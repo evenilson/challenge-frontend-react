@@ -21,7 +21,7 @@ function ComicCard({image, name, releaseDate, numberPages, description, price}: 
   return(
     <div className={`comic-card ${device}`}>
       <div className="comic-card__image">
-        <img src={image} alt={`Image ${name}`} />
+        <img src={image} alt={`${name}`} />
       </div>
       <div className="comic-card__body">
         <h1>{name}</h1>
