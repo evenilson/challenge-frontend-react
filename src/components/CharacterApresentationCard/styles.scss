@@ -1,0 +1,71 @@
+.character-apresentation-card {
+  background: var(--white);
+
+  box-shadow: var(--box-shadow);
+
+  padding: 3rem;
+
+  width: 100%;
+
+  margin-bottom: 2rem;
+  
+
+  display: flex;
+
+  border-radius: 10px 50px;
+
+  &__image {
+    border-radius: 50%;
+    
+    display: inline-block;
+    
+    background: red;
+    
+    overflow: hidden;
+    
+    height: 12rem;
+    width: 12rem;
+    
+    display: flex;
+    justify-content: center;
+    
+    img {
+      object-fit: contain;
+    }
+  }
+  
+  &__body{
+    flex: 1;
+    display: inline-block;
+
+    padding: 0 2rem;
+
+    h1{
+      margin-bottom: 1rem;
+    }
+  }
+
+}
+
+.character-apresentation-card.mobile {
+  flex-direction: column;
+  align-items: center;
+
+  padding: 2rem 0;
+
+  .character-apresentation-card__image {
+    width: 9rem;
+    height: 9rem;
+  }
+
+  .character-apresentation-card__body {
+    h1 {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
+}

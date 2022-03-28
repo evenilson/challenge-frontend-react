@@ -1,0 +1,37 @@
+
+//general
+header {
+  width: 100%;
+  height: 9.375rem;
+
+  background: var(--black-background);
+  color: var(--white)
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 100%;
+
+  &__logo, &__buttom {
+    display: flex;
+    align-items: center;
+
+    gap: 1rem;
+  }
+
+  &__logo {
+    margin-right: 1rem;
+  }
+
+  &__buttom {
+    background: var(--red);
+
+    border-radius: 5px 20px;
+
+    padding: 1rem;
+  }
+}
+

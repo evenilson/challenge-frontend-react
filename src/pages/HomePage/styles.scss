@@ -1,0 +1,18 @@
+.home {
+  padding-top: 2rem !important;
+
+  &__characters-list {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 3.5rem;
+  }
+
+  .info {
+    text-align: center;
+
+    margin: 4rem 0;
+  }
+}
