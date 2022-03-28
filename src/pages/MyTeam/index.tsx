@@ -4,7 +4,6 @@ import ScrollToTop from 'react-scroll-to-top';
 import Banner from '../../components/Banner';
 import CharacterCard from '../../components/CharacterCard';
 import Footer from '../../components/Footer';
-import Loading from '../../components/Loading';
 import useBreakpointDevice from '../../hooks/useBreakpointDevice';
 import useMyTeam from '../../hooks/useMyTeam';
 import { ICharacter } from '../../types/character';
@@ -38,7 +37,7 @@ function MyTeam() {
     return () => {
       intersectionObserver.disconnect();
     }
-  }, [])
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (isMoreCharacters && haveMoreCharacters) {
@@ -47,14 +46,14 @@ function MyTeam() {
       setHaveMoreCharacters(teamOffset.haveMore)
       setLimit(limit + 8)
     }
-  }, [isMoreCharacters])
+  }, [isMoreCharacters]) // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     const teamOffset = getTeam(limit);
     setTeam([...teamOffset.result])
 
     setHaveMoreCharacters(teamOffset.haveMore)
-  }, [myTeam])
+  }, [myTeam]) // eslint-disable-line react-hooks/exhaustive-deps
 
 
 

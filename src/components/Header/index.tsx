@@ -15,7 +15,7 @@ function Header() {
     <header>
       <nav className={`container header-content ${device}`}>
         <Link to="/" className="header-content__logo">
-          <img src={ironImg} alt="Iron-Man image" />
+          <img src={ironImg} alt="Iron-Man" />
           <h1>Marvel Strike Team</h1>
         </Link>
         <Link to="my-team" className="header-content__buttom">

@@ -75,7 +75,7 @@ function CharacterProfile(){
             />
 
             {
-              comics.length > 0 ? (
+              comics?.length > 0 ? (
                 comics.map((comic) => {
                   return <ComicCard 
                     key={comic.id}

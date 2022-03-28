@@ -6,7 +6,7 @@ function Footer() {
     <footer>
       <section className="container">
         <p> Data provided by Marvel. © 2021 MARVEL</p>
-        <p> Developed by <a href="https://github.com/evenilson/" target={"_blank"}>Evenilson Liandro</a></p>
+        <p> Developed by <a href="https://github.com/evenilson/" target={"_blank"} rel="noreferrer">Evenilson Liandro</a></p>
       </section>
     </footer>
   );

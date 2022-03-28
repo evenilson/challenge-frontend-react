@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useEffect, useState } from "react";
+import { createContext, ReactNode, useState } from "react";
 import { ICharacter } from "../types/character";
 import { toastMessage } from "../utils/toastMessage";
 

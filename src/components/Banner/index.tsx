@@ -1,7 +1,7 @@
 
 
 import { ReactNode } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import backIcon from '../../assets/icons/back.svg';
 

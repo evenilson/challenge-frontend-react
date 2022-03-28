@@ -18,7 +18,7 @@ function CharacterApresentationCard({name, description, image}: CharacterApresen
   return (
     <div className={`character-apresentation-card ${device}`}>
       <div className="character-apresentation-card__image">
-        <img src={image} alt="Image The Hero" />
+        <img src={image} alt="Hero" />
       </div>
       <div className="character-apresentation-card__body">
         <h1>{name}</h1>
