@@ -1,7 +1,9 @@
 
 
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import ReactTooltip from 'react-tooltip';
+import useBreakpointDevice from '../../hooks/useBreakpointDevice';
 import useMyTeam from '../../hooks/useMyTeam';
 import limitCaratersDescription from '../../utils/limitCaratersDescription';
 import groupIcon from './../../assets/icons/group.svg';
@@ -19,13 +21,18 @@ type CharacterCardProps = {
 }
 
 
-function CharacterCard({ id, name, description, thumbnail}:CharacterCardProps) {
+function CharacterCard({ id, name, description, thumbnail }: CharacterCardProps) {
 
   const {
     isFavorite,
     addCharacterTeam,
     removeCharacterTeam
   } = useMyTeam()
+
+  const navigate = useNavigate();
+
+  const { device } = useBreakpointDevice()
+
 
 
   const characterCurrent = {
@@ -44,19 +51,23 @@ function CharacterCard({ id, name, description, thumbnail}:CharacterCardProps) {
   }
 
   return (
-    <div className="character-card">
-      <div className="character-card__image">
+    <div className={`character-card ${device}`} >
+      <div className="character-card__image" onClick={() => navigate(`/character-profile/${id}`)}>
         <img src={`${thumbnail.path}.${thumbnail.extension}`} alt={`${name}`} />
       </div>
       <div className="character-card__body">
-        <Link to={`/character-profile/${id}`}><h2>{name}</h2></Link>
+        <h2 onClick={() => navigate(`/character-profile/${id}`)}>{name}</h2>
         <p>{limitCaratersDescription(description, 100)}</p>
         <button
-          style={isFavoriteCharacter ? {backgroundColor: 'var(--red)'} : {backgroundColor: 'var(--white)'}}
+          style={isFavoriteCharacter ? { backgroundColor: 'var(--red)' } : { backgroundColor: 'var(--white)' }}
           onClick={() => handleOnClick()}
+          data-tip data-for="tipButtom"
         >
           <img src={groupIcon} alt="Group icon" />
         </button>
+        <ReactTooltip id="tipButtom" place="left" effect="float">
+          { isFavoriteCharacter ? 'Remove character to team' : 'Add character from team' }
+        </ReactTooltip>
       </div>
     </div>
   );

@@ -15,6 +15,7 @@ if (typeof window !== "undefined") {
 }
 
 function App() {
+
   return (
     <BrowserRouter>
       <BreakpointDeviceContextProvider>

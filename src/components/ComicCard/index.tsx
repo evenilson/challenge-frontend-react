@@ -1,3 +1,4 @@
+import useBreakpointDevice from "../../hooks/useBreakpointDevice";
 import limitCaratersDescription from "../../utils/limitCaratersDescription";
 
 import './styles.scss';
@@ -15,10 +16,10 @@ type ComicCardProps = {
 
 function ComicCard({image, name, releaseDate, numberPages, description, price}: ComicCardProps) {
 
-  console.log('price', price, )
+  const { device } = useBreakpointDevice()
 
   return(
-    <div className="comic-card">
+    <div className={`comic-card ${device}`}>
       <div className="comic-card__image">
         <img src={image} alt={`Image ${name}`} />
       </div>

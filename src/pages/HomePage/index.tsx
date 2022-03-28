@@ -71,6 +71,7 @@ function HomePage() {
     return () => {
       intersectionObserver.disconnect();
     }
+    
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {

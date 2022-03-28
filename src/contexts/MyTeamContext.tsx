@@ -23,15 +23,16 @@ type MyTeamProviderProps = {
 export const MyTeamContext = createContext( {} as MyTeamContextType);
 
 function MyTeamContextProvider({children}: MyTeamProviderProps) {
-  const teamLS = (localStorage.getItem("team") || '') as string
-  const [myTeam, setMyTeam] = useState<ICharacter[]>(JSON.parse(teamLS) || [])
+  const teamLS = (localStorage.getItem("@marvel-team")) || '[{}]' as string
+  const paserLS = JSON.parse(teamLS)
+  const currentTeam = teamLS === '[{}]' ? [] : paserLS
+
+  const [myTeam, setMyTeam] = useState<ICharacter[]>(currentTeam)
   
 
   function getTeam(limit: number): ResponseTeamResult {
     
     const myTeamCurrent = myTeam.slice(0, limit )
-
-    console.log('new', myTeamCurrent)
 
     return {
       haveMore: myTeamCurrent.length === myTeam.length ? false : true,
@@ -46,7 +47,7 @@ function MyTeamContextProvider({children}: MyTeamProviderProps) {
 
     setMyTeam([...myTeamCurrent])
 
-    localStorage.setItem("team", JSON.stringify(myTeamCurrent))
+    localStorage.setItem("@marvel-team", JSON.stringify(myTeamCurrent))
 
     toastMessage({type: 'success', message: `"${character.name}" added to the team!`});
   }
@@ -58,7 +59,7 @@ function MyTeamContextProvider({children}: MyTeamProviderProps) {
 
     setMyTeam([...newTeam])
 
-    localStorage.setItem("team", JSON.stringify(myTeamCurrent))
+    localStorage.setItem("@marvel-team", JSON.stringify(myTeamCurrent))
     toastMessage({type: 'success', message: `Successfully removed!`});
 
   }

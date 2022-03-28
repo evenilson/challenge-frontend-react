@@ -87,7 +87,7 @@ function MyTeam() {
         
       <ScrollToTop smooth />
 
-      { (!haveMoreCharacters) && <p style={{margin: '1rem 0 4rem 0', textAlign: 'center'}}>All your favorite characters have already been shown!</p> }
+      { (!haveMoreCharacters && team.length > 0) && <p style={{margin: '1rem 0 4rem 0', textAlign: 'center'}}>All your favorite characters have already been shown!</p> }
 
 
       <Footer />

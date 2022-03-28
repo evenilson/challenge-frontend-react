@@ -22,6 +22,10 @@ header {
     gap: 1rem;
   }
 
+  &__logo {
+    margin-right: 1rem;
+  }
+
   &__buttom {
     background: var(--red);
 
@@ -31,9 +35,3 @@ header {
   }
 }
 
-// mobile
-.header-content.mobile {
-  a {
-    transform: scale(.8);
-  }
-}

@@ -20,6 +20,12 @@
 
     border-radius: 10px 30px 0 0; 
 
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(.8)
+    }
+
     img {
       width: 100%;
       object-fit: cover; 
@@ -34,10 +40,12 @@
       margin-top: 1rem;
     }
 
-    a:hover {
+    h2:hover {
       color: #FFCDD2;
 
       transition: .2s ease;
+
+      cursor: pointer;
     }
 
     position: relative;
@@ -75,4 +83,8 @@
   &:hover {
     transform: translateY(-1rem);
   }
+}
+
+.character-card.mobile {
+  width: 100%;
 }
